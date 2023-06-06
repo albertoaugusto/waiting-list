@@ -4,11 +4,11 @@ let option = ""
 do{
     let pacients = ""
     for(let i = 0; i < row.length; i++){
-        pacients += (i + 1) + "º - " + row[1] + "\n"
+        pacients += (i + 1) + "º - " + row[i] + "\n"
     }        
     option = prompt(
         "Pacientes: " + "\n" +
-        pacients + "\n" + "\n" +
+        pacients + "\n" + 
         "Escolha uma ação: " + "\n" + 
         "1 - Cadastrar Paciente" + "\n" +
         "2 - Consultar Pacientes" + "\n" +
@@ -17,7 +17,7 @@ do{
 
     switch(option){
         case "1":
-            let newPacient = prompt("Qual o nome do paciente?")
+            const newPacient = prompt("Qual o nome do paciente?")
             row.push(newPacient)
             break
         case "2":
