@@ -1,27 +1,40 @@
-const pacients = ["Letícia", "Murillo", "Victor"];
-    
-for(let i = 0; i < pacients.length; i++){
-    let list = pacients[i]
-    alert("Paciente Número: "+ i + " " + list)
-}
+let row = []
+let option = "" 
 
-let menu = prompt("Menu interativo, escolha uma opção: " + "\n\n" +
-            "1 - Novo Paciente" + "\n" +
-            "2 - Consultar Paciente" + "\n" +
-            "3 - Sair"
-)
+do{
+    let pacients = ""
+    for(let i = 0; i < row.length; i++){
+        pacients += (i + 1) + "º - " + row[1] + "\n"
+    }        
+    option = prompt(
+        "Pacientes: " + "\n" +
+        pacients + "\n" + "\n" +
+        "Escolha uma ação: " + "\n" + 
+        "1 - Cadastrar Paciente" + "\n" +
+        "2 - Consultar Pacientes" + "\n" +
+        "3 - Sair"
+    )
 
-switch (menu){
-    case "1":
-        let pacient = prompt("Digite o nome do paciente: ")
-        pacients.push(pacient)
-        break
-    case "2":
-        alert("Paciente " + pacients[0])
-        pacients.shift()
-    case "3":
-        alert("Encerrando...")
-        break
-}
+    switch(option){
+        case "1":
+            let newPacient = prompt("Qual o nome do paciente?")
+            row.push(newPacient)
+            break
+        case "2":
+            let consultPacient = row.shift()
+            alert(consultPacient + " Foi removido da fila")
+            break
+        case "3":
+            alert("Encerrando...")
+            break
+        default:
+            alert("Opção Inválida")
+    }
+        
+} while (option !== "3")
+
+
+
+
 
 
